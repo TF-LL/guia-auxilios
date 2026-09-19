@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Primeros Auxilios - Inicio</title>
+    <link   rel="icon" href="img/logo.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <input type="checkbox" id="nav-toggle" class="menu-checkbox">
+        <div class="container">
+            <div class="header-left-group">
+                <label for="nav-toggle" class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                </label>
+                
+                <div class="logo-container">
+                    <img src="img/logo.png" alt="Logo" class="site-logo">
+                </div>
+            </div>
+            <h1 class="site-title">Guía de Primeros Auxilios</h1>
+            
+        </div>
+        <nav class="site-nav" id="siteNav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="index.html" class="nav-link">Inicio / Emergencias</a></li>
+                <li class="nav-item"><a href="pas.html" class="nav-link">Protocolos PAS</a></li>
+                <li class="nav-item"><a href="urgencias.html" class="nav-link">Urgencias Comunes</a></li>
+                <li class="nav-item"><a href="criticas.html" class="nav-link">Situaciones Críticas</a></li>
+                <li class="nav-item"><a href="pediatria.html" class="nav-link">Pediatría Básica</a></li>
+                <li class="nav-item"><a href="frecuentes.html" class="nav-link">Lesiones Frecuentes</a></li>
+                <li class="nav-item"><a href="desastres.html" class="nav-link">Desastres Naturales</a></li>
+                <li class="nav-item"><a href="botiquin.html" class="nav-link">Botiquín Básico</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        
+
+        <section id="emergencias" class="emergency-contacts searchable-section">
+            <div class="container">
+                <h2 class="section-title" >Números de Emergencia</h2>
+                <div class="contacts-grid" id="contactsGrid">
+                    <div class="contact-card searchable-item">
+                        <h3 class="contact-title">Emergencias General</h3>
+                        <p class="contact-number" id="numGeneral">911 / 123</p>
+                    </div>
+                    <div class="contact-card searchable-item">
+                        <h3 class="contact-title">Ambulancia / Médicos</h3>
+                        <p class="contact-number" id="numAmbulance">107 / 131</p>
+                    </div>
+                    <div class="contact-card searchable-item">
+                        <h3 class="contact-title">Bomberos</h3>
+                        <p class="contact-number" id="numFire">119</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+   <section id="triage" class="triage-section searchable-section">
+    <div class="container">
+        <h2 class="section-title searchable-item">Simulador de Triage (Guía de Gravedad)</h2>
+        <div class="card searchable-item">
+            
+            <!-- Radios ocultos de control para cada pregunta -->
+            <input type="radio" id="p1-si" name="pregunta1" class="menu-checkbox">
+            <input type="radio" id="p1-no" name="pregunta1" class="menu-checkbox">
+            
+            <input type="radio" id="p2-si" name="pregunta2" class="menu-checkbox">
+            <input type="radio" id="p2-no" name="pregunta2" class="menu-checkbox">
+
+            <input type="radio" id="p3-si" name="pregunta3" class="menu-checkbox">
+            <input type="radio" id="p3-no" name="pregunta3" class="menu-checkbox">
+
+            <!-- PASO 1: ¿El paciente puede caminar? -->
+            <div class="triage-flow-step" id="step-1">
+                <p class="card-text">¿El paciente puede caminar?</p>
+                <div id="triageOptions">
+                    <label for="p1-si" class="triage-btn triage-cursor">Sí</label>
+                    <label for="p1-no" class="triage-btn2 triage-cursor">No</label>
+                </div>
+            </div>
+
+            <!-- PASO 2: ¿El paciente respira de forma espontánea? -->
+            <div class="triage-flow-step" id="step-2">
+                <p class="card-text">¿El paciente respira de forma espontánea?</p>
+                <div id="triageOptions">
+                    <label for="p2-si" class="triage-btn triage-cursor">Sí</label>
+                    <label for="p2-no" class="triage-btn2 triage-cursor">No</label>
+                </div>
+            </div>
+
+            <!-- PASO 3: ¿El paciente obedece órdenes sencillas? -->
+            <div class="triage-flow-step" id="step-3">
+                <p class="card-text">¿El paciente obedece órdenes sencillas?</p>
+                <div id="triageOptions">
+                    <label for="p3-si" class="triage-btn triage-cursor">Sí</label>
+                    <label for="p3-no" class="triage-btn2 triage-cursor">No</label>
+                </div>
+            </div>
+
+            <!-- RESULTADO VERDE (P1: Sí) -->
+            <div class="triage-flow-step" id="result-verde">
+                <p class="card-text triage-color-green">Clasificación: VERDE (Leve / Vulnerable ambulatorio)</p>
+                <p>Permite despejar la escena y concentrar los recursos en los casos graves.</p>
+                <a href="index.html" class="triage-btn triage-restart-btn">Reiniciar</a>
+            </div>
+
+            <!-- RESULTADO NEGRO (P1: No -> P2: No) -->
+            <div class="triage-flow-step" id="result-negro">
+                <p class="card-text triage-color-black">Clasificación: NEGRO (Fallecido / Expectante)</p>
+                <p>No respira de forma espontánea (incluso después de abrir la vía aérea). Determina la supervivencia inmediata.</p>
+                <a href="index.html" class="triage-btn triage-restart-btn">Reiniciar</a>
+            </div>
+
+            <!-- RESULTADO ROJO (P1: No -> P2: Sí -> P3: No) -->
+            <div class="triage-flow-step" id="result-rojo">
+                <p class="card-text triage-color-red">Clasificación: ROJO (Inmediata)</p>
+                <p>El paciente no obedece órdenes sencillas (está inconsciente o confundido). Evalúa estado neurológico crítico.</p>
+                <a href="index.html" class="triage-btn triage-restart-btn">Reiniciar</a>
+            </div>
+
+            <!-- RESULTADO AMARILLO (P1: No -> P2: Sí -> P3: Sí) -->
+            <div class="triage-flow-step" id="result-amarillo">
+                <p class="card-text triage-color-yellow">Clasificación: AMARILLO (Urgente pero estable)</p>
+                <p>El paciente obedece órdenes sencillas y sus funciones vitales están estables.</p>
+                <a href="index.html" class="triage-btn triage-restart-btn">Reiniciar</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="searchable-section">
+    <div class="container">
+        <h2 class="section-title searchable-item">¿Qué son los primeros auxilios?</h2>
+        <div class="card searchable-item card-image-layout">
+            <div >
+                <img src="img/lf.png" alt="Botiquín de primeros auxilios" >
+            </div>
+            <div >
+                <p class="card-text">Son las técnicas y medidas terapéuticas urgentes que se aplican a una persona que ha sufrido un accidente o una enfermedad repentina <strong>antes de la llegada de los servicios de emergencia profesionales</strong>...</p>
+                <h3>Objetivos</h3>
+                <ul>
+                    <li>Mantenerlo con vida.</li>
+                    <li>Evitar nuevas lesiones o complicaciones.</li>
+                    <li>Aliviar el dolor.</li>
+                    <li>Poner al accidentado lo antes posible en manos de servicios médicos.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  
+    
+</main>
+
+<footer class="site-footer">
+     <div class="container">
+         <p class="footer-text">&copy; 2026 Guía de Primeros Auxilios. Esta información es puramente educativa.</p>
+     </div>
+</footer>
+
+   
+</body>
+</html>

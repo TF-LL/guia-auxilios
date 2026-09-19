@@ -1,0 +1,428 @@
+:root {
+    --primary: #1d4ed8;
+    --primary-dark: #1e3a8a;
+    --danger: #dc2626;
+    --success: #16a34a;
+    --warning: #d97706;
+    --text-main: #0f172a;
+    --text-muted: #475569;
+    --bg-body: #f1f5f9;
+    --border-color: #cbd5e1;
+    --radius: 12px;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+    --transition: all 0.2s ease-in-out;
+}
+
+body {
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+}
+
+section {
+    margin-bottom: 2.5rem;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: #0f172a;
+    margin-bottom: 1.2rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 4px;
+    background-color: var(--primary);
+    border-radius: 2px;
+}
+
+.site-header {
+    background: #0f172a;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.75rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.site-header .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 130px;
+    padding-right: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 50px;
+}
+
+.header-left-group {
+    position: absolute;
+    left: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 1100;
+}
+
+.menu-toggle {
+    display: flex;
+    background: rgba(255, 255, 255, 0.12);
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+    border-radius: 8px;
+    position: relative;
+    z-index: 1101;
+    transition: var(--transition);
+}
+
+.menu-toggle:hover {
+    background: rgba(255, 255, 255, 0.22);
+}
+
+.hamburger-bar {
+    display: block;
+    width: 20px;
+    height: 2.5px;
+    background-color: #ffffff;
+    border-radius: 2px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.site-logo {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+}
+
+.site-logo:hover {
+    transform: rotate(-9deg);
+    transition: var(--transition);
+}
+
+.site-title {
+    font-size: 1.3rem;
+    color: #ffffff;
+    margin: 0;
+    font-weight: 700;
+}
+
+.menu-checkbox {
+    display: none;
+}
+
+.site-nav {
+    position: fixed;
+    top: 0;
+    left: -320px;
+    width: 300px;
+    height: 100vh;
+    background: #0f172a;
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    padding-top: 6rem;
+    transition: left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1050;
+    overflow-y: auto;
+}
+
+.menu-checkbox:checked ~ .site-nav {
+    left: 0;
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    list-style: none;
+    padding: 0 1.2rem;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #94a3b8;
+    font-weight: 500;
+    font-size: 1.02rem;
+    display: block;
+    padding: 10px 14px;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.08);
+    transform: translateX(4px);
+}
+
+.contacts-grid, .pas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.contact-card, .card, .situation-article, .kit-section {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 1.5rem;
+    transition: var(--transition);
+}
+
+.contact-card:hover, .card:hover, .situation-article:hover, .kit-section:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: #94a3b8;
+}
+
+.contact-title, .card-title, .situation-title {
+    color: var(--text-main);
+    margin-top: 0;
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.contact-number {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin: 0;
+}
+
+.steps-list, .kit-list {
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.step-item {
+    position: relative;
+    padding-left: 2.4rem;
+    counter-increment: step-counter;
+}
+
+.steps-list {
+    counter-reset: step-counter;
+}
+
+.step-item::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #eff6ff;
+    color: var(--primary);
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    border: 1px solid #bfdbfe;
+}
+
+.kit-item label {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+    user-select: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: var(--transition);
+}
+
+.kit-item label:hover {
+    background-color: #f8fafc;
+}
+
+.kit-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--primary);
+    border-radius: 4px;
+}
+
+.kit-checkbox:checked + span {
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+
+.triage-hidden {
+    display: none;
+}
+
+.triage-cursor {
+    cursor: pointer;
+}
+
+.triage-restart-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    text-decoration: none;
+}
+
+.triage-flow-step {
+    display: none;
+}
+
+#step-1 {
+    display: block;
+}
+
+.triage-section .card-text {
+   font-size: 1.15rem; 
+   font-weight: 700; 
+   margin-bottom: 1.5rem;
+   color: var(--text-main);
+}
+
+.triage-section .card-text.triage-color-green { color: #16a34a !important; }
+.triage-section .card-text.triage-color-black { color: #1f2937 !important; }
+.triage-section .card-text.triage-color-red { color: #dc2626 !important; }
+.triage-section .card-text.triage-color-yellow { color: #ca8a04 !important; }
+
+#triageOptions {
+    display: flex; 
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.triage-btn, .triage-btn2 {
+    color: white;
+    border: none; 
+    padding: 0.8rem 2rem; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    font-weight: 600;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.triage-btn {
+    background-color: var(--primary); 
+}
+
+.triage-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+.triage-btn2 {
+    background-color: var(--danger);
+}
+
+.triage-btn2:hover {
+    background-color: #991b1b;
+}
+
+#p1-si:checked ~ #step-1,
+#p1-no:checked ~ #step-1 { display: none; }
+
+#p1-si:checked ~ #result-verde { display: block !important; }
+#p1-no:checked ~ #step-2 { display: block !important; }
+
+#p2-si:checked ~ #step-2,
+#p2-no:checked ~ #step-2 { display: none !important; }
+
+#p2-no:checked ~ #result-negro { display: block !important; }
+#p2-si:checked ~ #step-3 { display: block !important; }
+
+#p3-si:checked ~ #step-3,
+#p3-no:checked ~ #step-3 { display: none !important; }
+
+#p3-no:checked ~ #result-rojo { display: block !important; }
+#p3-si:checked ~ #result-amarillo { display: block !important; }
+
+.card-image-layout {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card-image-layout > div:first-child {
+    flex: 1;
+    min-width: 160px;
+    text-align: center;
+}
+
+.card-image-layout > div:first-child img {
+    max-width: 160px;
+    height: auto;
+}
+
+.card-image-layout > div:last-child {
+    flex: 2;
+    min-width: 280px;
+}
+
+.pas-card-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.pas-img-container {
+    margin-top: 1rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+}
+
+.pas-img-container img {
+    width: 140px;
+    height: 140px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.site-footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    background: #ffffff;
+    font-size: 0.95rem;
+    margin-top: 3rem;
+}
